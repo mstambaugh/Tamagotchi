@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 function Pet(props){
   return (
     <div>
-      <h3>{props.name}</h3>
-      <h4>{props.currentHunger}</h4>
-      <p><em>{props.currentLove}</em></p>
+      <h3>{this.state.name}</h3>
+      <h4>{this.state.currentHunger}</h4>
+      <p><em>{this.state.currentLove}</em></p>
       <hr/>
     </div>
   );

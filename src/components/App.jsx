@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './Header';
 import PetHome from './PetHome';
-import NewTicketControl from './NewTicketControl';
+import NewPetControl from './NewPetControl';
 import Error404 from './Error404';
 import { Switch, Route } from 'react-router-dom';
 import Moment from 'moment';
