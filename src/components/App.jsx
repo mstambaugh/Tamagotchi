@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Header';
-import TicketList from './TicketList';
+import PetHome from './PetHome';
 import NewTicketControl from './NewTicketControl';
 import Error404 from './Error404';
 import { Switch, Route } from 'react-router-dom';
@@ -11,66 +11,68 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      masterTicketList: []
+      petName: [],
+      petHunger: 2,
+      petLove: 5
     };
-    this.handleAddingNewTicketToList = this.handleAddingNewTicketToList.bind(this);
+    this.handleAddingNewPetToPetHome = this.handleAddingNewPetToPetHome.bind(this);
   }
   
-  componentDidMount() {
-    console.log('componentDidMount');
-    this.waitTimeUpdateTimer = setInterval(() =>
-      this.updateTicketElapsedWaitTime(),
-    60000
-    );
-  }
+  // componentDidMount() {
+  //   console.log('componentDidMount');
+  //   this.waitTimeUpdateTimer = setInterval(() =>
+  //     this.updateTicketElapsedWaitTime(),
+  //   60000
+  //   );
+  // }
   
-  componentWillUnmount(){
-    console.log('componentWillUnmount');
-    clearInterval(this.waitTimeUpdateTimer);
-  }
+  // componentWillUnmount(){
+  //   console.log('componentWillUnmount');
+  //   clearInterval(this.waitTimeUpdateTimer);
+  // }
   
-  componentWillMount() {
-    console.log('componentWillMount');
-  }
+  // componentWillMount() {
+  //   console.log('componentWillMount');
+  // }
 
-  componentWillReceiveProps() {
-    console.log('componentWillReceiveProps');
-  }
+  // componentWillReceiveProps() {
+  //   console.log('componentWillReceiveProps');
+  // }
 
-  shouldComponentUpdate() {
-    console.log('shouldComponentUpdate');
-    return true;
-  }
-  componentWillUpdate() {
-    console.log('componentWillUpdate');
-  }
-  componentDidUpdate() {
-    console.log('componentDidUpdate');
-  }
+  // shouldComponentUpdate() {
+  //   console.log('shouldComponentUpdate');
+  //   return true;
+  // }
+  // componentWillUpdate() {
+  //   console.log('componentWillUpdate');
+  // }
+  // componentDidUpdate() {
+  //   console.log('componentDidUpdate');
+  // }
   
-  updateTicketElapsedWaitTime() {
+  // updateTicketElapsedWaitTime() {
   
-    let newMasterTicketList = this.state.masterTicketList.slice();
-    newMasterTicketList.forEach((ticket) =>
-      ticket.formattedWaitTime = (ticket.timeOpen).fromNow(true)
-    );
-    this.setState({masterTicketList: newMasterTicketList});
-  }
+  //   let newMasterTicketList = this.state.masterTicketList.slice();
+  //   newMasterTicketList.forEach((ticket) =>
+  //     ticket.formattedWaitTime = (ticket.timeOpen).fromNow(true)
+  //   );
+  //   this.setState({masterTicketList: newMasterTicketList});
+  // }
   
-  handleAddingNewTicketToList(newTicket){
-    var newMasterTicketList = this.state.masterTicketList.slice();
-    newTicket.formattedWaitTime = (newTicket.timeOpen).fromNow(true);
-    newMasterTicketList.push(newTicket);
-    this.setState({masterTicketList: newMasterTicketList});
-  }
+  // handleAddingNewTicketToList(newTicket){
+  //   var newMasterTicketList = this.state.masterTicketList.slice();
+  //   newTicket.formattedWaitTime = (newTicket.timeOpen).fromNow(true);
+  //   newMasterTicketList.push(newTicket);
+  //   this.setState({masterTicketList: newMasterTicketList});
+  // }
 
   render(){
     return (
       <div>
         <Header/>
         <Switch>
-          <Route exact path='/' render={()=><TicketList ticketList={this.state.masterTicketList} />} />
-          <Route path='/newticket' render={()=><NewTicketControl onNewTicketCreation={this.handleAddingNewTicketToList} />} />
+          <Route exact path='/' render={()=><PetHome petHome={this.state.currentPetHome} />} />
+          <Route path='/new pet' render={()=><NewPettControl onNewPetCreation={this.handleAddingNewPetToPetHome} />} />
           
           <Route component={Error404} />
         </Switch>
