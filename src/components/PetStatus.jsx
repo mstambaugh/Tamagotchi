@@ -1,21 +1,14 @@
 import React from 'react';
 import Pet from './Pet';
+// this is where we should house what we need to tell  our application state that the pet is either alive or dead, changing the state of pet status in app.jsx to true. I think we will want to use props.
 
-var initialPetStatus = [
-  {
-    name: 'Churro',
-    currentHunger: 5,
-    currentLove: 3
-  }
-];
-function PetStatus(){
+
+function PetStatus() {
   return (
     <div>
       <hr/>
-      {initialPetStatus.map((pet, index) =>
-        <Pet name={pet.name}
-          currentHunger={pet.currentHunger}
-          currentLove={pet.currentLove}
+      {petAlive.map((pet, index) =>
+        <Pet alive={pet.alive}
           key={index}/>
       )}
     </div>

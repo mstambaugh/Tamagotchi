@@ -5,7 +5,7 @@ function Header(){
   return (
     <div>
       <h1>Help Queue</h1>
-      <Link to="/">Home</Link> | <Link to="/petstatus">check pet status?</Link>
+      <Link to="/">Pet</Link> | <Link to="/newpet">Add a new pet?</Link>
     </div>
   );
 }
