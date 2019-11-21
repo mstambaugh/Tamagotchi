@@ -13,9 +13,9 @@ function Pet(props){
 }
 
 Pet.propTypes = {
-  name: PropTypes.string.isRequired,
-  currentHunger: PropTypes.int.isRequired,
-  currentLove: PropTypes.int.isRequired
+  name: PropTypes.string,
+  currentHunger: PropTypes.int,
+  currentLove: PropTypes.int
 };
 
 export default Pet;
