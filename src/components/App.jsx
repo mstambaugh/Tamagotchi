@@ -30,7 +30,7 @@ class App extends React.Component {
         <Header />
         <div>
           <Switch>
-            <Route exact path='/' component={PetHome} ></Route>
+            <Route exact path='/' component={PetControl} ></Route>
             <Route path='/AdoptAPet' render={()=><NewPetForm onPetCreation={this.handleNewPet} />}></Route>
             <Route path='/PetControl' render={()=><PetControl PetList={this.state.MasterList} />}></Route>
             {/* <Route import Error404 from component={Error404} /></Route> */}

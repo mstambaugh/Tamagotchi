@@ -1,16 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Header from 'header';
+import PetButtons from './petbuttons';
 
 
-
-    
-function handleFeedClick() {
-  props.feed(props.index)
-}
-function handleLoveClick() {
-  props.love(props.index);
-}
 
 class Pet extends React.Component {
 
@@ -119,28 +111,28 @@ class Pet extends React.Component {
 
 
 
-return (
-  <div className="container">
-    <div className="row">
-      <div className="col s12 m4">
-        <div className="card dark-grey">
-          <div className="card-content white-text">
-            <span className="card-title">{props.petName}</span>
-            <p><button className="card-body" onClick={handleFeedClick}>Feed!</button></p>
-            <span >{props.currentHunger}</span>
-            <p><button className="card-body" onClick={handleLoveClick}>Pet!</button></p>
-            <span >{props.currentLove}</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  );
-}
+// return (
+//   <div className="container">
+//     <div className="row">
+//       <div className="col s12 m4">
+//         <div className="card dark-grey">
+//           <div className="card-content white-text">
+//             <span className="card-title">{props.petName}</span>
+//             <p><button className="card-body" onClick={handleFeedClick}>Feed!</button></p>
+//             <span >{props.currentHunger}</span>
+//             <p><button className="card-body" onClick={handleLoveClick}>Pet!</button></p>
+//             <span >{props.currentLove}</span>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   </div>
+//   );
+// }
 
-Pet.propTypes = {
-  petName: PropTypes.string,
-  pet: PropTypes.string
-};
+// Pet.propTypes = {
+//   petName: PropTypes.string,
+//   pet: PropTypes.string
+// };
 
-export default Pet;
+// export default Pet;
